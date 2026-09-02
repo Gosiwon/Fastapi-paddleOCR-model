@@ -1,3 +1,5 @@
 .venv
 .env
-samples/*
+app/test/samples/*
+app/test/whole_output/*
+app/test/bbox_output/*
