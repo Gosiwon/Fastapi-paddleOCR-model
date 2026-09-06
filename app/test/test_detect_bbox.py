@@ -2,14 +2,14 @@ import cv2
 
 from app.ml.paddle_engine import recognize
 
-image_path = "app/test/samples/IMG_OCR_53_4PO_09451.png"
-output_path = "app/test/samples/bbox/bbox_output.png"
+image_path = "app/test/samples/whole/IMG_OCR_53_4PO_09451.png"
+output_path = "app/test/samples/bbox/bbox_output_number.png"
 
 image = cv2.imread(image_path)
 print("현재 이미지 크기:", image.shape)
 
-x_values = [717, 717, 897, 897]
-y_values = [832, 932, 832, 932]
+x_values = [1836, 1836, 1948, 1948]
+y_values = [868, 925, 868, 925]
 
 padding = 30
 
@@ -24,6 +24,6 @@ cv2.imwrite(output_path, crop)
 results = recognize(output_path)
 
 for result in results:
-    result.save_to_img("app/test/bbox_output")
-    result.save_to_json("app/test/bbox_output")
+    result.save_to_img("app/test/bbox_output/detection")
+    result.save_to_json("app/test/bbox_output/detection")
 

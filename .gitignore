@@ -1,5 +1,9 @@
-.venv
+.venv/*
 .env
 app/test/samples/*
 app/test/whole_output/*
 app/test/bbox_output/*
+training/detection/training_label/images/*
+training/detection/training_label/train_label.txt
+training/detection/training_label/val.txt
+training/output/*
