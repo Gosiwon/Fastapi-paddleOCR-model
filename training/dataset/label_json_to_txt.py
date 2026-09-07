@@ -33,7 +33,8 @@ def create_split(
     label_root: Path,
     output_root:Path,
     split: str,
-    limit: int
+    limit: int,
+    offset: int
 ):
     image_paths = [
         path
@@ -112,8 +113,18 @@ def main():
         args.train_images,
         args.train_labels,
         args.output,
-        split="train_label",
-        limit=20
+        split="train",
+        limit=20,
+        offset=0
+    )
+
+    create_split(
+        args.train_images,
+        args.train_labels,
+        args.output,
+        split="val",
+        limit=5,
+        offset=20
     )
 
 
